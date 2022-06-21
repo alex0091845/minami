@@ -7,7 +7,7 @@ const client = new DiscordJS.Client({
 });
 
 client.on("ready", () => {
-  console.log("The bot is ready");
+  console.log("Minami online o7");
 });
 
 // no args commands
@@ -19,7 +19,7 @@ client.on("messageCreate", (message) => {
       content = "pong";
       break;
     case "help":
-      content = "no. :joy:";
+      content = `no ${message.author.username}.  :joy:`;
       break;
   }
 
