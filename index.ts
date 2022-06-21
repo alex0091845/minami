@@ -10,12 +10,23 @@ client.on("ready", () => {
   console.log("The bot is ready");
 });
 
+// no args commands
 client.on("messageCreate", (message) => {
-  if (message.content === "ping") {
-    message.reply({
-      content: "pong",
-    });
+  let content;
+
+  switch (message.content) {
+    case "ping":
+      content = "pong";
+      break;
+    case "help":
+      content = "no. :joy:";
+      break;
   }
+
+  if (content) message.reply({ content });
 });
+
+// commands with args
+// TODO decide on prefix
 
 client.login(process.env.TOKEN);
