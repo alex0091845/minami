@@ -5,7 +5,9 @@ dotenv.config();
 import advice from "./rest apis/adviceSlip/advice";
 import bs from "./rest apis/corporateBS/bs something";
 import uselessFact from "./rest apis/uselessfacts/random";
-import trending from "./rest apis/kitsuAPI/trending";
+import trending from "./rest apis/jikan/trending";
+import joke from "./rest apis/icanhasdadjoke/joke";
+import devjoke from "./rest apis/devjoke/devjoke";
 
 const client = new DiscordJS.Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
@@ -15,7 +17,7 @@ client.on("ready", () => {
   console.log("Minami online o7");
 });
 
-// no args commands
+// no args commands so far, refactor if we get prefix commands w/args
 client.on("messageCreate", async (message) => {
   let content;
 
@@ -35,13 +37,17 @@ client.on("messageCreate", async (message) => {
     case "bs something":
       content = await bs();
       break;
+    case "joke":
+      content = await joke();
+      break;
+    case "devjoke":
+      content = await devjoke();
+      break;
     case "random":
       content = await uselessFact();
   }
+
   if (content) message.reply({ content });
 });
-
-// commands with args
-// TODO decide on command prefix
 
 client.login(process.env.TOKEN);

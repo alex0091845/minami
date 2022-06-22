@@ -18,3 +18,5 @@
 | `advice`       | Request advice from Minami                                  |
 | `bs something` | Request a bs phrase from Minami                             |
 | `random`       | Request a random, useless fact from Minami                  |
+| `joke`         | Request a joke, from Minami                                 |
+| `devjoke`      | Request a devjoke, from Minami                              |
