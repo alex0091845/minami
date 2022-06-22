@@ -2,12 +2,6 @@
 
 import axios from "axios";
 
-interface obj {
-  attributes: {
-    slug: string;
-  };
-}
-
 // give joke
 export default async function devjoke<T>() {
   const res = await axios.get(

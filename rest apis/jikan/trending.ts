@@ -2,10 +2,6 @@
 
 import axios from "axios";
 
-interface obj {
-  title: string;
-}
-
 // give trending anime
 export default async function trending<T>() {
   const res = await axios.get(
